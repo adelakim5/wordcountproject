@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Merienda One', cursive;
+            color: #172742;
+        }
+        .title {
+            text-align: center;
+            font-size: 45px;
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .reply {
+            text-align: right;
+            margin: 0px 100px;
+            font-family: 'Special Elite', cursive;
+        }
+        .reply a {
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .reply a:hover {
+            color: tomato;
+            font-weight: bold;
+        }
+
+        .wordcount {
+            margin: 0px 100px;
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .input {
+            margin: 0px 100px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #text{
+            font-family: 'Permanent Marker', cursive;
+            color: #172742;
+        }
+
+        .wordcountnumber {
+            color: red;
+            font-weight: 900;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+       
+
+    
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1> Total <strong class="wordcountnumber">{{total}}</strong> WORDS counted. </h1>
+    </div>
+    <div class="reply">
+            <a href="{%url 'home' %}">REPLY</a>
+        </div>   
+        <br/>
+        <div class="input">
+            <h2 id="text">TEXT: </h2>
+            <!-- 입력한 전체 텍스트 -->
+            {{full}}
+        </div>
+       <div class="wordcount">
+           <h2>WordCount: </h2>
+           <!-- {{dictionary}} '단어', '단어가 나온 횟수 -->
+           {% for word, howmany in dictionary %}
+           
+           <p class="input">{{word}} : {{howmany}}</p>
+           {%endfor%}
+           <br/>
+            
+       </div>
+</body>
+</html>
+
